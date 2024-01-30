@@ -23,16 +23,27 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 **Basic setting**: Under the **'Basic Settings'** section, choose **'ITS'** from the dropdown options and click the `Set Target Region` button.
 
+![image](graph/Basic_settings.png)
 
 **Advanced setting**: After clicking the `Set Target Region` button, the **'Advanced Settings'** section will automatically configure default reference sequences and BLAST parameters, requiring no further modifications. If you wish to modify parameters, you can edit the text boxes; all text boxes are editable. For more details on parameters, please refer to the [manual]().
+
+![image](graph/Advanced_Settings.png)
+
+**entrez email**: In cases of excessive usage of E-utilities, NCBI will attempt to contact users via email address. While it is possible to use the Entrez retrieval function without providing an 'entrez email,' there is a potential risk of access being directly blocked. Users can restrict the search to sequences published within a specific timeframe. If no publication date range is input, the default is to retrieve the latest sequences (the earliest data in GenBank dates back to 1900).
+
+![image](graph/entrez_search.png)
 
 ### Step 2: Submit BLAST
 
 Click the `Submit New BLAST` button in the 'Working directory' section to initiate the BLAST process. The process continues until no new sequences can be found, at which point the BLAST stops, and sequence downloading begins.
 
+![image](graph/submit.png)
+
 ### Step 3: Load previous job
 
 If you wish to resume an incomplete task, enter the working directory and click the `Load Previous Job` button for loading. The program will automatically assess the progress and resume execution from the point of interruption.
+
+![image](graph/load.png)
 
 ### **View results**
 
