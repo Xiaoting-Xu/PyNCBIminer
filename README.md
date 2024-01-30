@@ -37,13 +37,13 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 ### Step 2: Submit BLAST
 
-Click the `Submit New BLAST` button in the 'Working directory' section to initiate the BLAST process. The process continues until no new sequences can be found, at which point the BLAST stops, and sequence downloading begins.
+Click the `submit New BLAST` button in the 'Working directory' section to initiate the BLAST process. The process continues until no new sequences can be found, at which point the BLAST stops, and sequence downloading begins.
 
 ![image](graph/submit.png)
 
 ### Step 3: Load previous job
 
-If you wish to resume an incomplete task, enter the working directory and click the `Load Previous Job` button for loading. The program will automatically assess the progress and resume execution from the point of interruption.
+If you wish to resume an incomplete task, enter the working directory and click the `load Previous Job` button for loading. The program will automatically assess the progress and resume execution from the point of interruption.
 
 ![image](graph/load.png)
 
@@ -116,7 +116,7 @@ For a quick start, only input and output path are required, and are listed as be
 
 ### Alignments Trimming
 
-PyNCBIminer can perform alignment trimming using trimAl, for more details on parameters, please refer to the [trimal](http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2)).
+PyNCBIminer can perform alignment trimming using trimAl, for more details on parameters, please refer to the [trimal](http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2).
 
 **input path:** The input file(s) of sequences to be aligned in fasta format. 
 
