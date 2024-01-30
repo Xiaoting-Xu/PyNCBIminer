@@ -9,6 +9,8 @@ PyNCBIminer is a user-friendly graphical interface software designed for efficie
 
 # 2. Running PyNCBIminer
 
+Double click the .exe file, 
+
 ## 2.1 Sequence Retrieving Module
 
 The Sequence Retrieving Module is instrumental in accomplishing the primary function of PyNCBIminer, enabling the identification and download of specific gene sequence data for multiple species or taxa as specified by the user.
@@ -77,7 +79,7 @@ Three folders, namely `parameters`,`results`, and `tmp_files` , will be generate
 
 **3). `tmp_files`**: 
 
-For each round of BLAST, intermediate results are stored in separate subfolders with a prefix 'BLAST_' followed by numerical identifiers, created within the working directory. These subfolders individually contain the results of each round of BLAST. For more details, please refer to the [manual]()
+For each round of BLAST, intermediate results are stored in separate subfolders with a prefix 'BLAST_' followed by numerical identifiers, created within the working directory. These subfolders individually contain the results of each round of BLAST. For more details, please refer to the [manual]().
 
 
 
