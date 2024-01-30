@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1567</width>
+    <height>1284</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Century</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>PyNCBIminer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <family>Century</family>
+     <pointsize>8</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
+    </property>
+    <property name="leftMargin">
+     <number>9</number>
+    </property>
+    <property name="topMargin">
+     <number>9</number>
+    </property>
+    <property name="rightMargin">
+     <number>9</number>
+    </property>
+    <property name="bottomMargin">
+     <number>9</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Century</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <property name="font">
+        <font>
+         <family>Century</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <attribute name="title">
+        <string>Sequence Retrieving</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,2,10,1">
+        <item>
+         <widget class="QGroupBox" name="groupBox_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Working Directory</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QLabel" name="label_32">
+               <property name="text">
+                <string>working directory:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="wd">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>absolute path of working directory</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="view">
+               <property name="text">
+                <string>view</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Basic Settings</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="8,0">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_24">
+               <property name="text">
+                <string>target groups:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="taxonomy">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>one taxon per line</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,2,1,1">
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>select or input target regeion:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="target_region">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="editable">
+                <bool>true</bool>
+               </property>
+               <property name="currentText">
+                <string/>
+               </property>
+               <property name="maxVisibleItems">
+                <number>5</number>
+               </property>
+               <property name="maxCount">
+                <number>2147483645</number>
+               </property>
+               <property name="placeholderText">
+                <string/>
+               </property>
+               <item>
+                <property name="text">
+                 <string/>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ITS</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>rbcL</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>matK</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>trnL-trnF</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>psbA-trnH</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ndhF</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>rpoB</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="set_target_region">
+               <property name="text">
+                <string>set target region</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="save_settings">
+               <property name="text">
+                <string>save settings</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Advanced Settings</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="8,1,8">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,6,1,3,0,0,1">
+             <item>
+              <widget class="QLabel" name="label_33">
+               <property name="text">
+                <string>initial queries:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="initial_queries">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>paste sequences in fasta format here</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_25">
+               <property name="text">
+                <string>entrez qualifier:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="entrez_qualifier">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>constraint on BLAST search</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_23">
+               <item>
+                <widget class="QLabel" name="label_31">
+                 <property name="text">
+                  <string>publication date:  from</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="date_from">
+                 <property name="placeholderText">
+                  <string>YYYY/MM/DD</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_42">
+                 <property name="text">
+                  <string>to</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="date_to">
+                 <property name="placeholderText">
+                  <string>YYYY/MM/DD</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_27">
+               <property name="text">
+                <string>entrez email:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="0,0">
+               <item>
+                <widget class="QLineEdit" name="entrez_email">
+                 <property name="font">
+                  <font>
+                   <family>Times New Roman</family>
+                   <pointsize>9</pointsize>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="placeholderText">
+                  <string>user's email</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="esearch">
+                 <property name="text">
+                  <string>entrez search</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QFormLayout" name="formLayout_5">
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_18">
+               <property name="text">
+                <string>max length:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLineEdit" name="max_length">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>integer</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>expect value:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLineEdit" name="expect_value">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>nonnegative number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_15">
+               <property name="text">
+                <string>word size:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QLineEdit" name="word_size">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>positive integer</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="label_21">
+               <property name="text">
+                <string>gap costs:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QLineEdit" name="gap_costs">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>two positive integers separated  such as “11 1”</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="label_23">
+               <property name="text">
+                <string>nucleotide reward:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <widget class="QLineEdit" name="nucl_reward">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>nonnegative number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="0">
+              <widget class="QLabel" name="label_22">
+               <property name="text">
+                <string>nucleotide penalty:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <widget class="QLineEdit" name="nucl_penalty">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>nonpositive integer</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="0">
+              <widget class="QLabel" name="label_29">
+               <property name="text">
+                <string>exclude sources:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="1">
+              <widget class="QPlainTextEdit" name="exclude_sources">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>one keyword per line</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="0">
+              <widget class="QLabel" name="label_30">
+               <property name="text">
+                <string>key annotations:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="1">
+              <widget class="QPlainTextEdit" name="key_annotations">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>one keyword per line</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QPushButton" name="submit_new_blast">
+            <property name="text">
+             <string>submit new BLAST</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="load_previous_job">
+            <property name="text">
+             <string>load previous job</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Supermatrix Construction</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,2,3,1">
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Sequences Filtering</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_29">
+             <item>
+              <widget class="QCheckBox" name="control_extension">
+               <property name="text">
+                <string>Control extension</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="reduce_dataset">
+               <property name="text">
+                <string>Reduce dataset</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="remove_exceptional_records">
+               <property name="text">
+                <string>Remove exceptional records</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="combine_species">
+               <property name="text">
+                <string>Combine species</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup</string>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="4,1">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="1,7,1">
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string>input path:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="in_path1"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="view_in_path1">
+                   <property name="text">
+                    <string>view</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,7,1">
+                 <item>
+                  <widget class="QLabel" name="label_14">
+                   <property name="text">
+                    <string>output path:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="out_path1"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="view_out_path1">
+                   <property name="text">
+                    <string>view</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="run_filtering">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>run</string>
+               </property>
+               <property name="autoDefault">
+                <bool>false</bool>
+               </property>
+               <property name="default">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Sequences Alignment</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_43">
+             <item>
+              <widget class="QRadioButton" name="radioButton_3">
+               <property name="text">
+                <string>input one file</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_2</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_4">
+               <property name="text">
+                <string>input multiple files in one folder</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_2</string>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="4,1">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,7,1">
+                 <item>
+                  <widget class="QLabel" name="label_13">
+                   <property name="text">
+                    <string>input path:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="in_path2"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="view_in_path2">
+                   <property name="text">
+                    <string>view</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="1,7,1">
+                 <item>
+                  <widget class="QLabel" name="label_16">
+                   <property name="text">
+                    <string>output path:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="out_path2"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="view_out_path2">
+                   <property name="text">
+                    <string>view</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_48" stretch="1,1">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_20" stretch="1,2">
+                   <item>
+                    <widget class="QLabel" name="label">
+                     <property name="text">
+                      <string>alignment strategies:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="ali_alg">
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>9</pointsize>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="editable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="currentText">
+                      <string>auto (depends on data size)</string>
+                     </property>
+                     <property name="maxVisibleItems">
+                      <number>5</number>
+                     </property>
+                     <property name="maxCount">
+                      <number>2147483645</number>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>auto (depends on data size)</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>add (use long sequences as backbone to align fragment sequences)</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="1,1">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_9">
+                     <item>
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>thread:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="ali_thr">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="text">
+                        <string>-1</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_16">
+                     <item>
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>reorder:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="ali_reo">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Times New Roman</family>
+                         <pointsize>9</pointsize>
+                         <weight>50</weight>
+                         <bold>false</bold>
+                        </font>
+                       </property>
+                       <property name="editable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="currentText">
+                        <string>True</string>
+                       </property>
+                       <property name="maxVisibleItems">
+                        <number>5</number>
+                       </property>
+                       <property name="maxCount">
+                        <number>2147483645</number>
+                       </property>
+                       <item>
+                        <property name="text">
+                         <string>True</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>False</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="run_alignment">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>run</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Alignments Trimming</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_27" stretch="1,1">
+             <item>
+              <widget class="QRadioButton" name="radioButton_5">
+               <property name="text">
+                <string>input one file</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_3</string>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_6">
+               <property name="text">
+                <string>input multiple files in one folder</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroup_3</string>
+               </attribute>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="4,1">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_7">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_22" stretch="1,7,1">
+                 <item>
+                  <widget class="QLabel" name="label_17">
+                   <property name="text">
+                    <string>input path:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="in_path3"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="view_in_path3">
+                   <property name="text">
+                    <string>view</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,7,1">
+                 <item>
+                  <widget class="QLabel" name="label_26">
+                   <property name="text">
+                    <string>output path:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="out_path3"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="view_out_path3">
+                   <property name="text">
+                    <string>view</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="3">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="0,0">
+                   <item>
+                    <widget class="QLabel" name="label_6">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>automatic methods</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="tri_met">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Times New Roman</family>
+                       <pointsize>9</pointsize>
+                       <weight>50</weight>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="editable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="currentText">
+                      <string>automated1 (heuristic selection based on similarity statistics)</string>
+                     </property>
+                     <property name="maxVisibleItems">
+                      <number>5</number>
+                     </property>
+                     <property name="maxCount">
+                      <number>2147483645</number>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>automated1 (heuristic selection based on similarity statistics)</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>gappyout (uses information based on gaps' distribution)</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>strict (automatic selection on &quot;strict&quot; mode)</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>strictplus (automatic selection on &quot;strictplus&quot; mode)</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>user defined method (set thresholds of non gap, similarity, consistency...)</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_57" stretch="1,1">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_52" stretch="0,0">
+                   <item>
+                    <widget class="QLabel" name="label_48">
+                     <property name="text">
+                      <string>non gap threshold (0-1):</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="tri_gt">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="placeholderText">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_53">
+                   <item>
+                    <widget class="QLabel" name="label_49">
+                     <property name="text">
+                      <string>similarity threshold (0-1):</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="tri_st">
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_61" stretch="1,1">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_54" stretch="0,0">
+                   <item>
+                    <widget class="QLabel" name="label_50">
+                     <property name="text">
+                      <string>consistency threshold (0-1):</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="tri_ct">
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_55" stretch="0,0">
+                   <item>
+                    <widget class="QLabel" name="label_51">
+                     <property name="text">
+                      <string>min percentage to conserve (0-100):</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="tri_con">
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="run_trimming">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>run</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string>Alignments concatenation</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="4,1">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_8">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_64" stretch="1,7,1">
+               <item>
+                <widget class="QLabel" name="label_55">
+                 <property name="text">
+                  <string>input path:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="in_path4"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="view_in_path4">
+                 <property name="text">
+                  <string>view</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="1,7,1">
+               <item>
+                <widget class="QLabel" name="label_39">
+                 <property name="text">
+                  <string>output path:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="out_path4"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="view_out_path4">
+                 <property name="text">
+                  <string>view</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QPushButton" name="run_concatenation">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>run</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>Message Box</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1">
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMaximumSize</enum>
+       </property>
+       <item>
+        <widget class="QPlainTextEdit" name="message_box">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Times New Roman</family>
+           <pointsize>9</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="placeholderText">
+          <string>Welcome to use NCBIminer!</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1567</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuInstall_dependencies">
+     <property name="title">
+      <string>Install dependencies</string>
+     </property>
+     <addaction name="actionInstall_MAFFT"/>
+     <addaction name="actionInstall_trimAl"/>
+    </widget>
+    <addaction name="menuInstall_dependencies"/>
+   </widget>
+   <addaction name="menuTools"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionChange_font">
+   <property name="text">
+    <string>Change font</string>
+   </property>
+  </action>
+  <action name="actionInstall_MAFFT">
+   <property name="text">
+    <string>Install MAFFT</string>
+   </property>
+  </action>
+  <action name="actionInstall_trimAl">
+   <property name="text">
+    <string>Install Trimal</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
+</ui>
