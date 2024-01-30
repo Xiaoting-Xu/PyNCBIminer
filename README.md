@@ -38,9 +38,20 @@ If you wish to resume an incomplete task, enter the working directory and click 
 
 Three folders, namely `parameters`,`results`, and `tmp_files` , will be generated in the working directory. They primarily store initial parameters, BLAST results, and intermediate files, respectively.
 
-`parameters <folder>`: The BLAST parameters (`blast_parameters.txt <file>`), the fasta file of initial reference sequences (`initial_queries.fasta <file>`), information about the newly selected reference sequences in each round (`all_new_queries_info.txt <file>`), and the sequences in fasta format (`ref_seq <folder>`) along with the sequence alignment results (`ref_msa <folder>`) are stored in the respective folders in the working directory.
+**`parameters <folder>`**
 
-`results`: The final BLAST results (`blast_results.txt <file>`), the annotated fasta file and sequence information for correctly annotated sequences (`blast_results_checked.fasta <file>` and `blast_results_checked_seq_info.txt <file>`), as well as the fasta file and sequence information for sequences with annotation errors (`erroneous_blast_results_checked.fasta <file>` and `erroneous_blast_results_checked_seq_info.txt <file>`), are all available in the output folders.
+`blast_parameters.txt <file>`:The BLAST parameters 
+`initial_queries.fasta <file>`: The fasta file of initial reference sequences.
+`all_new_queries_info.txt <file>`: Information about the newly selected reference sequences in each round. 
+`ref_seq <folder>`: The newly selected reference sequences in fasta format.
+`ref_msa <folder>`: The newly selected reference sequence alignment results.
+
+**`results <folder>`**
+
+`blast_results.txt <file>`:The final BLAST results.
+`blast_results_checked.fasta <file>`: The fasta file for correctly annotated sequences.
+`blast_results_checked_seq_info.txt <file>`: The sequence information for correctly annotated sequences.
+ `erroneous_blast_results_checked.fasta <file>`: The fasta file and sequence information for sequences with annotation errors ( and `erroneous_blast_results_checked_seq_info.txt <file>`), are all available in the output folders.
 
 `tmp_files`: For each round of BLAST, intermediate results are stored in separate subfolders with a prefix 'BLAST_' followed by numerical identifiers, created within the working directory. These subfolders individually contain the results of each round of BLAST. For more details, please refer to the [manual]()
 
