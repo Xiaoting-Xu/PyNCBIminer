@@ -34,26 +34,40 @@ Click the `Submit New BLAST` button in the 'Working directory' section to initia
 
 If you wish to resume an incomplete task, enter the working directory and click the `Load Previous Job` button for loading. The program will automatically assess the progress and resume execution from the point of interruption.
 
-**View results**
+### **View results**
 
 Three folders, namely `parameters`,`results`, and `tmp_files` , will be generated in the working directory. They primarily store initial parameters, BLAST results, and intermediate files, respectively.
 
-**`parameters <folder>`**
+**1). `parameters <folder>`**:
 
 `blast_parameters.txt <file>`:The BLAST parameters 
+
 `initial_queries.fasta <file>`: The fasta file of initial reference sequences.
+
 `all_new_queries_info.txt <file>`: Information about the newly selected reference sequences in each round. 
+
 `ref_seq <folder>`: The newly selected reference sequences in fasta format.
+
 `ref_msa <folder>`: The newly selected reference sequence alignment results.
 
-**`results <folder>`**
+
+**2). `results <folder>`**:
 
 `blast_results.txt <file>`:The final BLAST results.
-`blast_results_checked.fasta <file>`: The fasta file for correctly annotated sequences.
-`blast_results_checked_seq_info.txt <file>`: The sequence information for correctly annotated sequences.
- `erroneous_blast_results_checked.fasta <file>`: The fasta file and sequence information for sequences with annotation errors ( and `erroneous_blast_results_checked_seq_info.txt <file>`), are all available in the output folders.
 
-`tmp_files`: For each round of BLAST, intermediate results are stored in separate subfolders with a prefix 'BLAST_' followed by numerical identifiers, created within the working directory. These subfolders individually contain the results of each round of BLAST. For more details, please refer to the [manual]()
+`blast_results_checked.fasta <file>`: The fasta file for correctly annotated sequences.**(We typically use this file for subsequent phylogenetic analysis.)**
+
+`blast_results_checked_seq_info.txt <file>`: The sequence information for correctly annotated sequences.
+
+ `erroneous_blast_results_checked.fasta <file>`: The fasta file for erroneous annotation sequences.
+
+ `erroneous_blast_results_checked_seq_info.txt <file>`: The sequence information for erroneous annotation sequences.
+ 
+
+**3). `tmp_files`**: 
+
+For each round of BLAST, intermediate results are stored in separate subfolders with a prefix 'BLAST_' followed by numerical identifiers, created within the working directory. These subfolders individually contain the results of each round of BLAST. For more details, please refer to the [manual]()
+
 
 
 
