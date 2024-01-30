@@ -21,17 +21,17 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 ### Step 1: Set target region
 
-**Working diretory**: Enter the absolute path of the working directory in the blank box under **'Working directory'**. You can also browse and select by clicking the `View` button. 
+**Working diretory**: The destination folder of output. 
 
 **Basic setting**: Under the **'Basic Settings'** section, choose **'ITS'** from the dropdown options and click the `Set Target Region` button.
 
 ![image](graph/Basic_settings.png)
 
-**Advanced setting**: After clicking the `Set Target Region` button, the **'Advanced Settings'** section will automatically configure default reference sequences and BLAST parameters, requiring no further modifications. If you wish to modify parameters, you can edit the text boxes; all text boxes are editable. For more details on parameters, please refer to the [manual]().
+**Advanced setting**: After clicking the `Set Target Region` button, the **'Advanced Settings'** section will automatically configure default reference sequences and BLAST parameters. You can edit the text boxes, for more details on parameters, please refer to the [manual]().
 
 ![image](graph/Advanced_Settings.png)
 
-**entrez email**: In cases of excessive usage of E-utilities, NCBI will attempt to contact users via email address. While it is possible to use the Entrez retrieval function without providing an 'entrez email,' there is a potential risk of access being directly blocked. Users can restrict the search to sequences published within a specific timeframe. If no publication date range is input, the default is to retrieve the latest sequences (the earliest data in GenBank dates back to 1900).
+**entrez email**: Users can restrict the search to sequences published within a specific timeframe (default: 1900-now). We recommend users to provide their email address, failure to do so may result in access being blocked by NCBI.
 
 ![image](graph/entrez_search.png)
 
@@ -50,6 +50,7 @@ If you wish to resume an incomplete task, enter the working directory and click 
 ### **View results**
 
 Three folders, namely `parameters`,`results`, and `tmp_files` , will be generated in the working directory. They primarily store initial parameters, BLAST results, and intermediate files, respectively.
+
 
 **1). `parameters <folder>`**:
 
@@ -81,6 +82,53 @@ Three folders, namely `parameters`,`results`, and `tmp_files` , will be generate
 
 For each round of BLAST, intermediate results are stored in separate subfolders with a prefix 'BLAST_' followed by numerical identifiers, created within the working directory. These subfolders individually contain the results of each round of BLAST. For more details, please refer to the [manual]().
 
+## 2.2 Supermatrix Construction Module
+
+### Sequence Filtering
+
+`Control extension`: Remove errors related to sequence extension that may occur during the sequence download.
+
+`Reduce dataset`: This function will first perform `Remove exceptional records` and `Combine species`, ultimately retaining a single representative sequence for each species.
+
+`Remove excepetional records`: Remove sequences with specific names and lengths below a specified threshold.
+
+`Combine species`: Rename 'subsp,' 'var,' and 'f' to the species level names.
+
+**input path**
+
+`Control extension` and `Reduce dataset`: The entire folder generated as output by the Sequence Retrieving Module (e.g., `D:/PyNCBIminer_data/ITS_20230308_Saxifragales <folder>`)
+
+`Remove excepetional records`and `Combine species`: The input file(s) of sequences to be filtered in fasta format (e.g., `D:/PyNCBIminer_data/ITS_20230308_Saxifragales/results/blast_results_checked.fasta <file>`)
+
+**output path**
+
+The destination folder of output, where log files and result will be written
+
+### Sequence Alignment
+
+PyNCBIminer can perform sequence alignment using MAFFT, for more details on parameters, please refer to the [MAFFT](https://mafft.cbrc.jp/alignment/software/).
+
+For a quick start, only input and output path are required, and are listed as below:
+
+**input path:** The input file(s) of sequences to be aligned in fasta format. 
+
+**output path:** The destination folder of output, where log files and result will be written.
+
+### Alignments Trimming
+
+PyNCBIminer can perform alignment trimming using trimAl, for more details on parameters, please refer to the [trimal](http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2)).
+
+**input path:** The input file(s) of sequences to be aligned in fasta format. 
+
+**output path:** The destination folder of output, where log files and result will be written.
+
+### Alignments concatenation
+
+PyNCBIminer can perform alignment concatenation to concatenate alignments of multiple markers to build supermatrix. Markers of each taxon from different input files will be concatenated end to end, and missing markers will be filled with gap ‘-’. For a quick start (the same is for a normal run), only input and output path are required, and are listed as below:
+
+**input path:** The input file(s) of sequences to be aligned in fasta format. 
+
+**output path:** The destination folder of output, where log files and result will be written.
 
 
 
