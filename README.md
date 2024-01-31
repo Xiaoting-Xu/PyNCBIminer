@@ -48,13 +48,13 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 ![image](graph/entrez_search.png)
 
-### Step 2: Submit BLAST
+#### Step 2: Submit BLAST
 
 Click the `submit New BLAST` button in the 'Working directory' section to initiate the BLAST process. The process continues until no new sequences can be found, at which point the BLAST stops, and sequence downloading begins.
 
 ![image](graph/submit.png)
 
-### Step 3: Load previous job
+#### Step 3: Load previous job
 
 If you wish to resume an incomplete task, enter the working directory and click the `load Previous Job` button for loading. The program will automatically assess the progress and resume execution from the point of interruption.
 
