@@ -10,7 +10,7 @@ Download the corresponding version of the packaged from [SourceForge](https://so
 
 **Installed**
 
-**For windows**: Users only need to unzip the package and double click the executable(.exe) file directly.
+**For windows**: Users only need to unzip the package and double click the executable(.exe) file of PyNCBIminer directly.
 
 **For macOS**: Users only need to unzip the package and double click the Unix executablee(.exe) file of PyNCBIminer directly. 
 
@@ -119,7 +119,7 @@ The destination folder of output, where log files and result will be written
 
 ### Sequence Alignment
 
-PyNCBIminer can perform sequence alignment using MAFFT, for more details on parameters, please refer to the [MAFFT](https://mafft.cbrc.jp/alignment/software/).
+PyNCBIminer can perform sequence alignment using MAFFT, for more details on parameters, please refer to the manual of [MAFFT](https://mafft.cbrc.jp/alignment/software/manual/manual.html).
 
 For a quick start, only input and output path are required, and are listed as below:
 
