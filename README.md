@@ -2,9 +2,15 @@
 
 PyNCBIminer is a user-friendly graphical interface software designed for efficient and precise retrieval of GenBank data. Its simple operation does not require a background in bioinformatics. PyNCBIminer automatically performs BLAST iterations and optimizations based on user-provided nucleotide sequence names, target taxa, and initial reference sequences. This enhances the integrity of both sequence quantity and length, facilitating the identification and retrieval of specific gene sequence data for multiple species or taxa as specified by the user.
 
-# 1. Download
+# 1. Download and Installed
 
-**For windows**: Download the corresponding version of the packaged from [release](), users only need to unzip the package and run the.exe file directly.
+**Download**
+
+Download the corresponding version of the packaged from [SourceForge](https://sourceforge.net/projects/pyncbiminer/files/).
+
+**Installed**
+
+**For windows**: Users only need to unzip the package and run the.exe file directly.
 
 **For macOS**:
 
