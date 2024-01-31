@@ -32,7 +32,7 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 ### 2.1.2 The detailed steps
 
-### Step 1: Set target region
+#### Step 1: Set target region
 
 **Working diretory**: The destination folder of output. 
 
