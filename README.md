@@ -22,6 +22,8 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 ![image](graph/quick_start.png)
 
+### The detailed steps
+
 ### Step 1: Set target region
 
 **Working diretory**: The destination folder of output. 
