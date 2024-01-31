@@ -4,7 +4,8 @@ PyNCBIminer is a user-friendly graphical interface software designed for efficie
 
 # 1. Download
 
-**For windows**: Download the corresponding version of the packaged from(), users only need to unzip the package and run the.exe file directly.
+**For windows**: Download the corresponding version of the packaged from [release](), users only need to unzip the package and run the.exe file directly.
+
 **For macOS**:
 
 # 2. Running PyNCBIminer
