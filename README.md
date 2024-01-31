@@ -16,9 +16,11 @@ Double click the .exe file,
 
 The Sequence Retrieving Module is instrumental in accomplishing the primary function of PyNCBIminer, enabling the identification and download of specific gene sequence data for multiple species or taxa as specified by the user.
 
-### **Example**
+### **Quick start example**
 
 **Taxa**: Saxifragales, **Gene**: ITS
+
+![image](graph/quick_start.png)
 
 ### Step 1: Set target region
 
