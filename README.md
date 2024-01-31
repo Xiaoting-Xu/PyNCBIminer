@@ -40,7 +40,7 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 ![image](graph/Basic_settings.png)
 
-**Advanced setting**: After clicking the `Set Target Region` button, the **'Advanced Settings'** section will automatically configure default reference sequences and BLAST parameters. You can edit the text boxes, for more details on parameters, please refer to the [manual]().
+**Advanced setting**: After clicking the `Set Target Region` button, the **'Advanced Settings'** section will automatically configure default reference sequences and BLAST parameters. You can edit the text boxes, for more details on parameters, please refer to the [manual](PyNCBIminer_1.2.5_manual.pdf).
 
 ![image](graph/Advanced_Settings.png)
 
@@ -93,7 +93,7 @@ Three folders, namely `parameters`,`results`, and `tmp_files` , will be generate
 
 **3). `tmp_files`**: 
 
-For each round of BLAST, intermediate results are stored in separate subfolders with a prefix 'BLAST_' followed by numerical identifiers, created within the working directory. These subfolders individually contain the results of each round of BLAST. For more details, please refer to the [manual]().
+For each round of BLAST, intermediate results are stored in separate subfolders with a prefix 'BLAST_' followed by numerical identifiers, created within the working directory. These subfolders individually contain the results of each round of BLAST. For more details, please refer to the [manual](PyNCBIminer_1.2.5_manual.pdf).
 
 ## 2.2 Supermatrix Construction Module
 
