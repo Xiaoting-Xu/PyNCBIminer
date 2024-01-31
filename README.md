@@ -12,7 +12,7 @@ Download the corresponding version of the packaged from [SourceForge](https://so
 
 **For windows**: Users only need to unzip the package and double click the executable(.exe) file of PyNCBIminer directly.
 
-**For macOS**: Users only need to unzip the package and double click the Unix executablee(.exe) file of PyNCBIminer directly. 
+**For macOS**: Users only need to unzip the package and double click the executable(.exe) file of PyNCBIminer directly. 
 
 # 2. Running PyNCBIminer
 
