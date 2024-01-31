@@ -10,13 +10,15 @@ Download the corresponding version of the packaged from [SourceForge](https://so
 
 **Installed**
 
-**For windows**: Users only need to unzip the package and run the.exe file directly.
+**For windows**: Users only need to unzip the package and double click the executable(.exe) file directly.
 
-**For macOS**:
+**For macOS**: Users only need to unzip the package and double click the Unix executablee(.exe) file of PyNCBIminer directly. 
 
 # 2. Running PyNCBIminer
 
-Double click the .exe file, 
+Double click the executable file(.exe), and the following interactive interface will appear.
+
+![image](graph/main_graph.png)
 
 ## 2.1 Sequence Retrieving Module
 
