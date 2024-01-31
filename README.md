@@ -149,5 +149,5 @@ A more complete manual is [here](PyNCBIminer_1.2.5_manual.pdf).
 
 # 4. Contact
 
-If you encounter any issues during usage, feel free to ask in the [PyNCBIminer Discussion](), and we will respond as soon as possible.
+If you encounter any issues during usage, feel free to ask in the [PyNCBIminer Discussion](https://github.com/Xiaoting-Xu/PyNCBIminer/discussions/categories/q-a), and we will respond as soon as possible.
 
