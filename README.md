@@ -24,13 +24,13 @@ Double click the executable file(.exe), and the following interactive interface 
 
 The Sequence Retrieving Module is instrumental in accomplishing the primary function of PyNCBIminer, enabling the identification and download of specific gene sequence data for multiple species or taxa as specified by the user.
 
-### **Quick start example**
+### 2.1.1 Quick start example
 
 **Taxa**: Saxifragales, **Gene**: ITS
 
 ![image](graph/quick_start.png)
 
-### The detailed steps
+### 2.1.2 The detailed steps
 
 ### Step 1: Set target region
 
@@ -60,7 +60,7 @@ If you wish to resume an incomplete task, enter the working directory and click 
 
 ![image](graph/load.png)
 
-### **View results**
+### 2.1.3 View results
 
 Three folders, namely `parameters`,`results`, and `tmp_files` , will be generated in the working directory. They primarily store initial parameters, BLAST results, and intermediate files, respectively.
 
@@ -97,7 +97,7 @@ For each round of BLAST, intermediate results are stored in separate subfolders 
 
 ## 2.2 Supermatrix Construction Module
 
-### Sequence Filtering
+### 2.2.1 Sequence Filtering
 
 `Control extension`: Remove errors related to sequence extension that may occur during the sequence download.
 
@@ -117,7 +117,7 @@ For each round of BLAST, intermediate results are stored in separate subfolders 
 
 The destination folder of output, where log files and result will be written
 
-### Sequence Alignment
+### 2.2.2 Sequence Alignment
 
 PyNCBIminer can perform sequence alignment using MAFFT, for more details on parameters, please refer to the manual of [MAFFT](https://mafft.cbrc.jp/alignment/software/manual/manual.html).
 
@@ -127,7 +127,7 @@ For a quick start, only input and output path are required, and are listed as be
 
 **output path:** The destination folder of output, where log files and result will be written.
 
-### Alignments Trimming
+### 2.2.3 Alignments Trimming
 
 PyNCBIminer can perform alignment trimming using trimAl, for more details on parameters, please refer to the [trimal](http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2).
 
@@ -135,7 +135,7 @@ PyNCBIminer can perform alignment trimming using trimAl, for more details on par
 
 **output path:** The destination folder of output, where log files and result will be written.
 
-### Alignments concatenation
+### 2.2.4 Alignments concatenation
 
 PyNCBIminer can perform alignment concatenation to concatenate alignments of multiple markers to build supermatrix. Markers of each taxon from different input files will be concatenated end to end, and missing markers will be filled with gap ‘-’. For a quick start (the same is for a normal run), only input and output path are required, and are listed as below:
 
