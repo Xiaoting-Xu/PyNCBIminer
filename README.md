@@ -143,5 +143,9 @@ PyNCBIminer can perform alignment concatenation to concatenate alignments of mul
 
 **output path:** The destination folder of output, where log files and result will be written.
 
+# 3. User manual
+
+A more complete manual is [here](PyNCBIminer_1.2.5_manual.pdf).
+
 
 
