@@ -31,7 +31,7 @@ def combine_keep_records(wd_list):
     col_list = ["taxon_name"]
     for wd in wd_list:
 
-        name = wd.name
+        name = Path(wd).name
         col_list.append(name)
         try:
             df = pd.read_table(Path(wd) / Path("results") / Path("blast_result_kept.txt"), sep="\t")
