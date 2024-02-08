@@ -101,21 +101,11 @@ For each round of BLAST, intermediate results are stored in separate subfolders 
 
 `Control extension`: Remove errors related to sequence extension that may occur during the sequence download.
 
-`Reduce dataset`: This function will first perform `Remove exceptional records` and `Combine species`, ultimately retaining a single representative sequence for each species.
+`Reduce dataset`: This function is designed to eliminate sequences with specific names (such as 'sp,', 'cf', 'aff', 'x') and lengths below a specified threshold. It will also rename instances of 'subsp,' 'var,' and 'f' to the corresponding species-level names. The ultimate goal is to preserve a single representative sequence for each species.
 
-`Remove excepetional records`: Remove sequences with specific names and lengths below a specified threshold.
+**input path:** The entire folder generated as output by the Sequence Retrieving Module (e.g., `D:/PyNCBIminer_data/ITS_20230308_Saxifragales <folder>`)
 
-`Combine species`: Rename 'subsp,' 'var,' and 'f' to the species level names.
-
-**input path**
-
-`Control extension` and `Reduce dataset`: The entire folder generated as output by the Sequence Retrieving Module (e.g., `D:/PyNCBIminer_data/ITS_20230308_Saxifragales <folder>`)
-
-`Remove excepetional records`and `Combine species`: The input file(s) of sequences to be filtered in fasta format (e.g., `D:/PyNCBIminer_data/ITS_20230308_Saxifragales/results/blast_results_checked.fasta <file>`)
-
-**output path**
-
-The destination folder of output, where log files and result will be written
+**output path:** The input file(s) of sequences to be filtered in fasta format (e.g., `D:/PyNCBIminer_data/ITS_20230308_Saxifragales/results/blast_results_checked.fasta <file>`)
 
 ### 2.2.2 Sequence Alignment
 
