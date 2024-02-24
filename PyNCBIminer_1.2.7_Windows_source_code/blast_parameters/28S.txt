@@ -1,0 +1,10 @@
+target_region	28S
+entrez_qualifier	(("28S ribosomal RNA" OR "large subunit ribosomal RNA") NOT "environmental sample" NOT "environmental_sample")
+max_length	3500
+key_annotations	ribosomal RNA
+exclude_sources	mitochondrion|mitochondrial|environmental sample|environmental_sample
+expect_value	1e-05
+gap_costs	2 1
+word_size	15
+nucl_reward	1
+nucl_penalty	-2

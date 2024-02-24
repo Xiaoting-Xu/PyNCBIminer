@@ -1,0 +1,10 @@
+target_region	18S
+entrez_qualifier	(("18S ribosomal RNA" OR "small subunit ribosomal RNA") NOT "environmental sample" NOT "environmental_sample")
+max_length	1900
+key_annotations	18S ribosomal RNA|small subunit ribosomal RNA
+exclude_sources	mitochondrion|mitochondrial|chloroplast|plastid
+expect_value	1e-05
+gap_costs	2 1
+word_size	15
+nucl_reward	1
+nucl_penalty	-2
