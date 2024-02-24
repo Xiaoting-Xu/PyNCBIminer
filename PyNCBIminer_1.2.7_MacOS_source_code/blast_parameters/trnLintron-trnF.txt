@@ -1,0 +1,10 @@
+target_region	trnLintron-trnF
+entrez_qualifier	("trnL-trnF" OR "trnL-F" OR "trnL" OR "tRNA-Leu" OR "tRNA-Phe") NOT "environmental sample" NOT "environmental_sample"
+max_length	900
+key_annotations	trnL-F|trnL|tRNA-Leu
+exclude_sources	mitochondrion|mitochondrial|environmental sample|environmental_sample
+expect_value	0.001
+gap_costs	2 1
+word_size	7
+nucl_reward	1
+nucl_penalty	-1
