@@ -1,0 +1,19 @@
+9 Steps to Run PyNCBIminer
+
+## download the newest version (1.2.8 on 26-Apr-2024) of MacOS source code on https://github.com/Xiaoting-Xu/PyNCBIminer and extract to your [path]
+
+## the commands followed are run in "anaconda prompt" or "miniconda prompt". If not yet installed, we recommend installation of Anaconda Navigator, and open anaconda prompt in Navigator
+
+cd [path] # turn to your path for working directory, in this directory you can see files such as requirements.txt, pyNCBIminer_00_main.py and so on. It is recommended to add this path into environment variable for convenience
+
+conda create -n [name] python==3.9.5 # for example, conda create -n pyNCBIminer python==3.9.5. if failed, try conda create -n [name] python=3.9
+
+conda activate [name] # for example, conda activate pyNCBIminer
+
+pip install requirements.txt # install all the dependencies
+
+pip install certifi # install certificate package
+
+Install Certificates.command # install certificate package, I am not sure which line of certifi installation really works, but with both lines the UI of our program can be raised
+
+python pyNCBIminer_00_main.py # run our programme
