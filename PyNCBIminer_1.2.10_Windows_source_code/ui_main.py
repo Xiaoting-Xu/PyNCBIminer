@@ -17,7 +17,7 @@ class Ui_MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
+        
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -618,8 +618,6 @@ class Ui_MainWindow(QMainWindow):
 
         self.verticalLayout_6.addLayout(self.horizontalLayout_17)
 
-        self.horizontalLayout_48 = QHBoxLayout()
-        self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
         self.horizontalLayout_25 = QHBoxLayout()
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
         self.horizontalLayout_9 = QHBoxLayout()
@@ -646,29 +644,6 @@ class Ui_MainWindow(QMainWindow):
 
         self.horizontalLayout_16.addWidget(self.label_3)
 
-        self.horizontalLayout_20 = QHBoxLayout()
-        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.label = QLabel(self.groupBox)
-        self.label.setObjectName(u"label")
-
-        self.horizontalLayout_20.addWidget(self.label)
-
-        self.ali_alg = QComboBox(self.groupBox)
-        self.ali_alg.addItem("")
-        self.ali_alg.addItem("")
-        self.ali_alg.setObjectName(u"ali_alg")
-        self.ali_alg.setFont(font3)
-        self.ali_alg.setEditable(True)
-        self.ali_alg.setMaxVisibleItems(5)
-        self.ali_alg.setMaxCount(2147483645)
-
-        self.horizontalLayout_20.addWidget(self.ali_alg)
-
-        self.horizontalLayout_20.setStretch(0, 1)
-        self.horizontalLayout_20.setStretch(1, 2)
-
-        self.horizontalLayout_16.addLayout(self.horizontalLayout_20)
-
         self.ali_reo = QComboBox(self.groupBox)
         self.ali_reo.addItem("")
         self.ali_reo.addItem("")
@@ -685,14 +660,31 @@ class Ui_MainWindow(QMainWindow):
 
         self.horizontalLayout_25.addLayout(self.horizontalLayout_16)
 
-        self.horizontalLayout_25.setStretch(0, 1)
-        self.horizontalLayout_25.setStretch(1, 1)
 
-        self.horizontalLayout_48.addLayout(self.horizontalLayout_25)
+        self.verticalLayout_6.addLayout(self.horizontalLayout_25)
 
-        self.horizontalLayout_48.setStretch(0, 1)
+        self.horizontalLayout_20 = QHBoxLayout()
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.label = QLabel(self.groupBox)
+        self.label.setObjectName(u"label")
 
-        self.verticalLayout_6.addLayout(self.horizontalLayout_48)
+        self.horizontalLayout_20.addWidget(self.label)
+
+        self.ali_alg = QComboBox(self.groupBox)
+        self.ali_alg.addItem("")
+        self.ali_alg.addItem("")
+        self.ali_alg.setObjectName(u"ali_alg")
+        sizePolicy4.setHeightForWidth(self.ali_alg.sizePolicy().hasHeightForWidth())
+        self.ali_alg.setSizePolicy(sizePolicy4)
+        self.ali_alg.setFont(font3)
+        self.ali_alg.setEditable(True)
+        self.ali_alg.setMaxVisibleItems(5)
+        self.ali_alg.setMaxCount(2147483645)
+
+        self.horizontalLayout_20.addWidget(self.ali_alg)
+
+
+        self.verticalLayout_6.addLayout(self.horizontalLayout_20)
 
 
         self.horizontalLayout_26.addLayout(self.verticalLayout_6)
@@ -705,6 +697,7 @@ class Ui_MainWindow(QMainWindow):
         self.horizontalLayout_26.addWidget(self.run_alignment)
 
         self.horizontalLayout_26.setStretch(0, 4)
+        self.horizontalLayout_26.setStretch(1, 1)
 
         self.verticalLayout_11.addLayout(self.horizontalLayout_26)
 
@@ -1137,15 +1130,15 @@ class Ui_MainWindow(QMainWindow):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"thread:", None))
         self.ali_thr.setText(QCoreApplication.translate("MainWindow", u"-1", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"reorder:", None))
+        self.ali_reo.setItemText(0, QCoreApplication.translate("MainWindow", u"True", None))
+        self.ali_reo.setItemText(1, QCoreApplication.translate("MainWindow", u"False", None))
+
+        self.ali_reo.setCurrentText(QCoreApplication.translate("MainWindow", u"True", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"alignment strategies:", None))
         self.ali_alg.setItemText(0, QCoreApplication.translate("MainWindow", u"auto (depends on data size)", None))
         self.ali_alg.setItemText(1, QCoreApplication.translate("MainWindow", u"add (use long sequences as backbone to align fragment sequences)", None))
 
         self.ali_alg.setCurrentText(QCoreApplication.translate("MainWindow", u"auto (depends on data size)", None))
-        self.ali_reo.setItemText(0, QCoreApplication.translate("MainWindow", u"True", None))
-        self.ali_reo.setItemText(1, QCoreApplication.translate("MainWindow", u"False", None))
-
-        self.ali_reo.setCurrentText(QCoreApplication.translate("MainWindow", u"True", None))
         self.run_alignment.setText(QCoreApplication.translate("MainWindow", u"run", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"Alignments Trimming", None))
         self.radioButton_5.setText(QCoreApplication.translate("MainWindow", u"input one file", None))
