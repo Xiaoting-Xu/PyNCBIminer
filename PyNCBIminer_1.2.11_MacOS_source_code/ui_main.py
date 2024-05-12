@@ -61,8 +61,8 @@ class Ui_MainWindow(QMainWindow):
         font2.setBold(False)
         font2.setWeight(50)
         self.tab.setFont(font2)
-        self.verticalLayout_3 = QVBoxLayout(self.tab)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_10 = QVBoxLayout(self.tab)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.groupBox_7 = QGroupBox(self.tab)
         self.groupBox_7.setObjectName(u"groupBox_7")
         self.groupBox_7.setFont(font1)
@@ -95,8 +95,10 @@ class Ui_MainWindow(QMainWindow):
         self.verticalLayout.addLayout(self.horizontalLayout_5)
 
 
-        self.verticalLayout_3.addWidget(self.groupBox_7)
+        self.verticalLayout_10.addWidget(self.groupBox_7)
 
+        self.horizontalLayout_23 = QHBoxLayout()
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
         self.groupBox_8 = QGroupBox(self.tab)
         self.groupBox_8.setObjectName(u"groupBox_8")
         sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
@@ -107,33 +109,28 @@ class Ui_MainWindow(QMainWindow):
         self.groupBox_8.setFont(font1)
         self.verticalLayout_2 = QVBoxLayout(self.groupBox_8)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.horizontalLayout_4 = QHBoxLayout()
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.label_24 = QLabel(self.groupBox_8)
         self.label_24.setObjectName(u"label_24")
 
-        self.horizontalLayout_4.addWidget(self.label_24)
+        self.verticalLayout_2.addWidget(self.label_24)
 
         self.taxonomy = QPlainTextEdit(self.groupBox_8)
         self.taxonomy.setObjectName(u"taxonomy")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.taxonomy.sizePolicy().hasHeightForWidth())
         self.taxonomy.setSizePolicy(sizePolicy2)
         self.taxonomy.setFont(font3)
 
-        self.horizontalLayout_4.addWidget(self.taxonomy)
+        self.verticalLayout_2.addWidget(self.taxonomy)
 
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_4)
-
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.label_4 = QLabel(self.groupBox_8)
         self.label_4.setObjectName(u"label_4")
 
-        self.horizontalLayout_2.addWidget(self.label_4)
+        self.horizontalLayout_4.addWidget(self.label_4)
 
         self.target_region = QComboBox(self.groupBox_8)
         self.target_region.addItem("")
@@ -155,8 +152,13 @@ class Ui_MainWindow(QMainWindow):
         self.target_region.setMaxVisibleItems(5)
         self.target_region.setMaxCount(2147483645)
 
-        self.horizontalLayout_2.addWidget(self.target_region)
+        self.horizontalLayout_4.addWidget(self.target_region)
 
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_4)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.set_target_region = QPushButton(self.groupBox_8)
         self.set_target_region.setObjectName(u"set_target_region")
 
@@ -167,15 +169,11 @@ class Ui_MainWindow(QMainWindow):
 
         self.horizontalLayout_2.addWidget(self.save_settings)
 
-        self.horizontalLayout_2.setStretch(1, 2)
-        self.horizontalLayout_2.setStretch(2, 1)
-        self.horizontalLayout_2.setStretch(3, 1)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
 
-        self.verticalLayout_2.setStretch(0, 8)
 
-        self.verticalLayout_3.addWidget(self.groupBox_8)
+        self.horizontalLayout_23.addWidget(self.groupBox_8)
 
         self.groupBox_5 = QGroupBox(self.tab)
         self.groupBox_5.setObjectName(u"groupBox_5")
@@ -185,188 +183,181 @@ class Ui_MainWindow(QMainWindow):
         sizePolicy3.setHeightForWidth(self.groupBox_5.sizePolicy().hasHeightForWidth())
         self.groupBox_5.setSizePolicy(sizePolicy3)
         self.groupBox_5.setFont(font1)
-        self.horizontalLayout_10 = QHBoxLayout(self.groupBox_5)
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.verticalLayout_10 = QVBoxLayout()
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.label_33 = QLabel(self.groupBox_5)
-        self.label_33.setObjectName(u"label_33")
-
-        self.verticalLayout_10.addWidget(self.label_33)
-
-        self.initial_queries = QPlainTextEdit(self.groupBox_5)
-        self.initial_queries.setObjectName(u"initial_queries")
-        self.initial_queries.setFont(font3)
-
-        self.verticalLayout_10.addWidget(self.initial_queries)
-
-        self.label_25 = QLabel(self.groupBox_5)
-        self.label_25.setObjectName(u"label_25")
-
-        self.verticalLayout_10.addWidget(self.label_25)
-
-        self.entrez_qualifier = QPlainTextEdit(self.groupBox_5)
-        self.entrez_qualifier.setObjectName(u"entrez_qualifier")
-        self.entrez_qualifier.setFont(font3)
-
-        self.verticalLayout_10.addWidget(self.entrez_qualifier)
-
-        self.horizontalLayout_23 = QHBoxLayout()
-        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
-        self.label_31 = QLabel(self.groupBox_5)
-        self.label_31.setObjectName(u"label_31")
-
-        self.horizontalLayout_23.addWidget(self.label_31)
-
-        self.date_from = QLineEdit(self.groupBox_5)
-        self.date_from.setObjectName(u"date_from")
-
-        self.horizontalLayout_23.addWidget(self.date_from)
-
-        self.label_42 = QLabel(self.groupBox_5)
-        self.label_42.setObjectName(u"label_42")
-
-        self.horizontalLayout_23.addWidget(self.label_42)
-
-        self.date_to = QLineEdit(self.groupBox_5)
-        self.date_to.setObjectName(u"date_to")
-
-        self.horizontalLayout_23.addWidget(self.date_to)
-
-
-        self.verticalLayout_10.addLayout(self.horizontalLayout_23)
-
-        self.label_27 = QLabel(self.groupBox_5)
-        self.label_27.setObjectName(u"label_27")
-
-        self.verticalLayout_10.addWidget(self.label_27)
-
-        self.horizontalLayout_11 = QHBoxLayout()
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.entrez_email = QLineEdit(self.groupBox_5)
-        self.entrez_email.setObjectName(u"entrez_email")
-        self.entrez_email.setFont(font3)
-
-        self.horizontalLayout_11.addWidget(self.entrez_email)
-
-        self.esearch = QPushButton(self.groupBox_5)
-        self.esearch.setObjectName(u"esearch")
-
-        self.horizontalLayout_11.addWidget(self.esearch)
-
-
-        self.verticalLayout_10.addLayout(self.horizontalLayout_11)
-
-        self.verticalLayout_10.setStretch(0, 1)
-        self.verticalLayout_10.setStretch(1, 6)
-        self.verticalLayout_10.setStretch(2, 1)
-        self.verticalLayout_10.setStretch(3, 3)
-        self.verticalLayout_10.setStretch(6, 1)
-
-        self.horizontalLayout_10.addLayout(self.verticalLayout_10)
-
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.horizontalLayout_10.addItem(self.verticalSpacer_4)
-
+        self.verticalLayout_3 = QVBoxLayout(self.groupBox_5)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.formLayout_5 = QFormLayout()
         self.formLayout_5.setObjectName(u"formLayout_5")
-        self.label_18 = QLabel(self.groupBox_5)
-        self.label_18.setObjectName(u"label_18")
-
-        self.formLayout_5.setWidget(5, QFormLayout.LabelRole, self.label_18)
-
-        self.max_length = QLineEdit(self.groupBox_5)
-        self.max_length.setObjectName(u"max_length")
-        self.max_length.setFont(font3)
-
-        self.formLayout_5.setWidget(5, QFormLayout.FieldRole, self.max_length)
-
         self.label_7 = QLabel(self.groupBox_5)
         self.label_7.setObjectName(u"label_7")
 
-        self.formLayout_5.setWidget(6, QFormLayout.LabelRole, self.label_7)
+        self.formLayout_5.setWidget(9, QFormLayout.LabelRole, self.label_7)
 
         self.expect_value = QLineEdit(self.groupBox_5)
         self.expect_value.setObjectName(u"expect_value")
         self.expect_value.setFont(font3)
 
-        self.formLayout_5.setWidget(6, QFormLayout.FieldRole, self.expect_value)
+        self.formLayout_5.setWidget(9, QFormLayout.FieldRole, self.expect_value)
 
         self.label_15 = QLabel(self.groupBox_5)
         self.label_15.setObjectName(u"label_15")
 
-        self.formLayout_5.setWidget(7, QFormLayout.LabelRole, self.label_15)
+        self.formLayout_5.setWidget(10, QFormLayout.LabelRole, self.label_15)
 
         self.word_size = QLineEdit(self.groupBox_5)
         self.word_size.setObjectName(u"word_size")
         self.word_size.setFont(font3)
 
-        self.formLayout_5.setWidget(7, QFormLayout.FieldRole, self.word_size)
+        self.formLayout_5.setWidget(10, QFormLayout.FieldRole, self.word_size)
 
         self.label_21 = QLabel(self.groupBox_5)
         self.label_21.setObjectName(u"label_21")
 
-        self.formLayout_5.setWidget(8, QFormLayout.LabelRole, self.label_21)
+        self.formLayout_5.setWidget(11, QFormLayout.LabelRole, self.label_21)
 
         self.gap_costs = QLineEdit(self.groupBox_5)
         self.gap_costs.setObjectName(u"gap_costs")
         self.gap_costs.setFont(font3)
 
-        self.formLayout_5.setWidget(8, QFormLayout.FieldRole, self.gap_costs)
+        self.formLayout_5.setWidget(11, QFormLayout.FieldRole, self.gap_costs)
 
         self.label_23 = QLabel(self.groupBox_5)
         self.label_23.setObjectName(u"label_23")
 
-        self.formLayout_5.setWidget(9, QFormLayout.LabelRole, self.label_23)
+        self.formLayout_5.setWidget(12, QFormLayout.LabelRole, self.label_23)
 
         self.nucl_reward = QLineEdit(self.groupBox_5)
         self.nucl_reward.setObjectName(u"nucl_reward")
         self.nucl_reward.setFont(font3)
 
-        self.formLayout_5.setWidget(9, QFormLayout.FieldRole, self.nucl_reward)
+        self.formLayout_5.setWidget(12, QFormLayout.FieldRole, self.nucl_reward)
 
         self.label_22 = QLabel(self.groupBox_5)
         self.label_22.setObjectName(u"label_22")
 
-        self.formLayout_5.setWidget(10, QFormLayout.LabelRole, self.label_22)
+        self.formLayout_5.setWidget(13, QFormLayout.LabelRole, self.label_22)
 
         self.nucl_penalty = QLineEdit(self.groupBox_5)
         self.nucl_penalty.setObjectName(u"nucl_penalty")
         self.nucl_penalty.setFont(font3)
 
-        self.formLayout_5.setWidget(10, QFormLayout.FieldRole, self.nucl_penalty)
+        self.formLayout_5.setWidget(13, QFormLayout.FieldRole, self.nucl_penalty)
 
-        self.label_29 = QLabel(self.groupBox_5)
-        self.label_29.setObjectName(u"label_29")
+        self.initial_queries = QPlainTextEdit(self.groupBox_5)
+        self.initial_queries.setObjectName(u"initial_queries")
+        self.initial_queries.setFont(font3)
 
-        self.formLayout_5.setWidget(11, QFormLayout.LabelRole, self.label_29)
+        self.formLayout_5.setWidget(0, QFormLayout.FieldRole, self.initial_queries)
+
+        self.label_33 = QLabel(self.groupBox_5)
+        self.label_33.setObjectName(u"label_33")
+
+        self.formLayout_5.setWidget(0, QFormLayout.LabelRole, self.label_33)
 
         self.exclude_sources = QPlainTextEdit(self.groupBox_5)
         self.exclude_sources.setObjectName(u"exclude_sources")
         self.exclude_sources.setFont(font3)
 
-        self.formLayout_5.setWidget(11, QFormLayout.FieldRole, self.exclude_sources)
+        self.formLayout_5.setWidget(2, QFormLayout.FieldRole, self.exclude_sources)
 
-        self.label_30 = QLabel(self.groupBox_5)
-        self.label_30.setObjectName(u"label_30")
+        self.label_29 = QLabel(self.groupBox_5)
+        self.label_29.setObjectName(u"label_29")
 
-        self.formLayout_5.setWidget(12, QFormLayout.LabelRole, self.label_30)
+        self.formLayout_5.setWidget(2, QFormLayout.LabelRole, self.label_29)
 
         self.key_annotations = QPlainTextEdit(self.groupBox_5)
         self.key_annotations.setObjectName(u"key_annotations")
         self.key_annotations.setFont(font3)
 
-        self.formLayout_5.setWidget(12, QFormLayout.FieldRole, self.key_annotations)
+        self.formLayout_5.setWidget(1, QFormLayout.FieldRole, self.key_annotations)
+
+        self.label_30 = QLabel(self.groupBox_5)
+        self.label_30.setObjectName(u"label_30")
+
+        self.formLayout_5.setWidget(1, QFormLayout.LabelRole, self.label_30)
+
+        self.label_18 = QLabel(self.groupBox_5)
+        self.label_18.setObjectName(u"label_18")
+
+        self.formLayout_5.setWidget(3, QFormLayout.LabelRole, self.label_18)
+
+        self.max_length = QLineEdit(self.groupBox_5)
+        self.max_length.setObjectName(u"max_length")
+        self.max_length.setFont(font3)
+
+        self.formLayout_5.setWidget(3, QFormLayout.FieldRole, self.max_length)
+
+        self.entrez_qualifier = QPlainTextEdit(self.groupBox_5)
+        self.entrez_qualifier.setObjectName(u"entrez_qualifier")
+        self.entrez_qualifier.setFont(font3)
+
+        self.formLayout_5.setWidget(4, QFormLayout.FieldRole, self.entrez_qualifier)
+
+        self.label_27 = QLabel(self.groupBox_5)
+        self.label_27.setObjectName(u"label_27")
+
+        self.formLayout_5.setWidget(8, QFormLayout.LabelRole, self.label_27)
+
+        self.label_25 = QLabel(self.groupBox_5)
+        self.label_25.setObjectName(u"label_25")
+
+        self.formLayout_5.setWidget(4, QFormLayout.LabelRole, self.label_25)
+
+        self.horizontalLayout_10 = QHBoxLayout()
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.entrez_email = QLineEdit(self.groupBox_5)
+        self.entrez_email.setObjectName(u"entrez_email")
+        self.entrez_email.setFont(font3)
+
+        self.horizontalLayout_10.addWidget(self.entrez_email)
+
+        self.esearch = QPushButton(self.groupBox_5)
+        self.esearch.setObjectName(u"esearch")
+
+        self.horizontalLayout_10.addWidget(self.esearch)
 
 
-        self.horizontalLayout_10.addLayout(self.formLayout_5)
+        self.formLayout_5.setLayout(8, QFormLayout.FieldRole, self.horizontalLayout_10)
 
-        self.horizontalLayout_10.setStretch(0, 8)
-        self.horizontalLayout_10.setStretch(1, 1)
-        self.horizontalLayout_10.setStretch(2, 8)
+        self.label_31 = QLabel(self.groupBox_5)
+        self.label_31.setObjectName(u"label_31")
 
-        self.verticalLayout_3.addWidget(self.groupBox_5)
+        self.formLayout_5.setWidget(7, QFormLayout.LabelRole, self.label_31)
+
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.label_43 = QLabel(self.groupBox_5)
+        self.label_43.setObjectName(u"label_43")
+
+        self.horizontalLayout_11.addWidget(self.label_43)
+
+        self.date_from = QLineEdit(self.groupBox_5)
+        self.date_from.setObjectName(u"date_from")
+
+        self.horizontalLayout_11.addWidget(self.date_from)
+
+        self.label_42 = QLabel(self.groupBox_5)
+        self.label_42.setObjectName(u"label_42")
+
+        self.horizontalLayout_11.addWidget(self.label_42)
+
+        self.date_to = QLineEdit(self.groupBox_5)
+        self.date_to.setObjectName(u"date_to")
+
+        self.horizontalLayout_11.addWidget(self.date_to)
+
+
+        self.formLayout_5.setLayout(7, QFormLayout.FieldRole, self.horizontalLayout_11)
+
+
+        self.verticalLayout_3.addLayout(self.formLayout_5)
+
+
+        self.horizontalLayout_23.addWidget(self.groupBox_5)
+
+        self.horizontalLayout_23.setStretch(0, 1)
+        self.horizontalLayout_23.setStretch(1, 1)
+
+        self.verticalLayout_10.addLayout(self.horizontalLayout_23)
 
         self.horizontalLayout_12 = QHBoxLayout()
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
@@ -383,12 +374,8 @@ class Ui_MainWindow(QMainWindow):
         self.horizontalLayout_12.addWidget(self.load_previous_job)
 
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout_12)
+        self.verticalLayout_10.addLayout(self.horizontalLayout_12)
 
-        self.verticalLayout_3.setStretch(0, 1)
-        self.verticalLayout_3.setStretch(1, 2)
-        self.verticalLayout_3.setStretch(2, 10)
-        self.verticalLayout_3.setStretch(3, 1)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -999,11 +986,8 @@ class Ui_MainWindow(QMainWindow):
         self.horizontalLayout_3.setSizeConstraint(QLayout.SetMaximumSize)
         self.message_box = QPlainTextEdit(self.groupBox_3)
         self.message_box.setObjectName(u"message_box")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.message_box.sizePolicy().hasHeightForWidth())
-        self.message_box.setSizePolicy(sizePolicy8)
+        sizePolicy2.setHeightForWidth(self.message_box.sizePolicy().hasHeightForWidth())
+        self.message_box.setSizePolicy(sizePolicy2)
         self.message_box.setFont(font3)
 
         self.horizontalLayout_3.addWidget(self.message_box)
@@ -1070,19 +1054,6 @@ class Ui_MainWindow(QMainWindow):
         self.set_target_region.setText(QCoreApplication.translate("MainWindow", u"set target region", None))
         self.save_settings.setText(QCoreApplication.translate("MainWindow", u"save settings", None))
         self.groupBox_5.setTitle(QCoreApplication.translate("MainWindow", u"Advanced Settings", None))
-        self.label_33.setText(QCoreApplication.translate("MainWindow", u"initial queries:", None))
-        self.initial_queries.setPlaceholderText(QCoreApplication.translate("MainWindow", u"paste sequences in fasta format here", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"entrez qualifier:", None))
-        self.entrez_qualifier.setPlaceholderText(QCoreApplication.translate("MainWindow", u"constraint on BLAST search", None))
-        self.label_31.setText(QCoreApplication.translate("MainWindow", u"publication date:  from", None))
-        self.date_from.setPlaceholderText(QCoreApplication.translate("MainWindow", u"YYYY/MM/DD", None))
-        self.label_42.setText(QCoreApplication.translate("MainWindow", u"to", None))
-        self.date_to.setPlaceholderText(QCoreApplication.translate("MainWindow", u"YYYY/MM/DD", None))
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"entrez email:", None))
-        self.entrez_email.setPlaceholderText(QCoreApplication.translate("MainWindow", u"user's email", None))
-        self.esearch.setText(QCoreApplication.translate("MainWindow", u"entrez search", None))
-        self.label_18.setText(QCoreApplication.translate("MainWindow", u"max length:", None))
-        self.max_length.setPlaceholderText(QCoreApplication.translate("MainWindow", u"integer", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"expect value:", None))
         self.expect_value.setPlaceholderText(QCoreApplication.translate("MainWindow", u"nonnegative number", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"word size:", None))
@@ -1094,17 +1065,31 @@ class Ui_MainWindow(QMainWindow):
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"nucleotide penalty:", None))
         self.nucl_penalty.setText("")
         self.nucl_penalty.setPlaceholderText(QCoreApplication.translate("MainWindow", u"nonpositive integer", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"exclude sources:", None))
+        self.initial_queries.setPlaceholderText(QCoreApplication.translate("MainWindow", u"paste sequences in fasta format here", None))
+        self.label_33.setText(QCoreApplication.translate("MainWindow", u"initial queries:", None))
         self.exclude_sources.setPlaceholderText(QCoreApplication.translate("MainWindow", u"one keyword per line", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"key annotations:", None))
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"exclude sources:", None))
         self.key_annotations.setPlaceholderText(QCoreApplication.translate("MainWindow", u"one keyword per line", None))
+        self.label_30.setText(QCoreApplication.translate("MainWindow", u"key annotations:", None))
+        self.label_18.setText(QCoreApplication.translate("MainWindow", u"max length:", None))
+        self.max_length.setPlaceholderText(QCoreApplication.translate("MainWindow", u"integer", None))
+        self.entrez_qualifier.setPlaceholderText(QCoreApplication.translate("MainWindow", u"constraint on BLAST search", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"entrez email:", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"entrez qualifier:", None))
+        self.entrez_email.setPlaceholderText(QCoreApplication.translate("MainWindow", u"user's email", None))
+        self.esearch.setText(QCoreApplication.translate("MainWindow", u"entrez search", None))
+        self.label_31.setText(QCoreApplication.translate("MainWindow", u"publication date:  ", None))
+        self.label_43.setText(QCoreApplication.translate("MainWindow", u"from", None))
+        self.date_from.setPlaceholderText(QCoreApplication.translate("MainWindow", u"YYYY/MM/DD", None))
+        self.label_42.setText(QCoreApplication.translate("MainWindow", u"to", None))
+        self.date_to.setPlaceholderText(QCoreApplication.translate("MainWindow", u"YYYY/MM/DD", None))
         self.submit_new_blast.setText(QCoreApplication.translate("MainWindow", u"submit new BLAST", None))
         self.load_previous_job.setText(QCoreApplication.translate("MainWindow", u"load previous job", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Sequence Retrieving", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Sequence Retrieval", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Sequences Filtering", None))
-        self.control_extension.setText(QCoreApplication.translate("MainWindow", u"Extension Control ", None))
-        self.reduce_dataset.setText(QCoreApplication.translate("MainWindow", u"Dataset Reduction", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"consensus value:", None))
+        self.control_extension.setText(QCoreApplication.translate("MainWindow", u"Extended segments refinement", None))
+        self.reduce_dataset.setText(QCoreApplication.translate("MainWindow", u"Species-level sequence selection", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"abnormal index", None))
         self.consensus_value.setItemText(0, QCoreApplication.translate("MainWindow", u"True", None))
         self.consensus_value.setItemText(1, QCoreApplication.translate("MainWindow", u"False", None))
 
@@ -1178,7 +1163,7 @@ class Ui_MainWindow(QMainWindow):
         self.run_concatenation.setText(QCoreApplication.translate("MainWindow", u"run", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Supermatrix Construction", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Message Box", None))
-        self.message_box.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Welcome to use NCBIminer!", None))
+        self.message_box.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Welcome to use PyNCBIminer!", None))
         self.menuTools.setTitle(QCoreApplication.translate("MainWindow", u"Tools", None))
         self.menuInstall_dependencies.setTitle(QCoreApplication.translate("MainWindow", u"Install dependencies", None))
     # retranslateUi
