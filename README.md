@@ -38,13 +38,13 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 **Basic setting**: Under the **'Basic Settings'** section, choose **'ITS'** from the dropdown options and click the `Set Target Region` button.
 
-![image](graph/Basic_settings.png)
+![image](graph/set_target_region.png)
 
 **Advanced setting**: After clicking the `Set Target Region` button, the **'Advanced Settings'** section will automatically configure default reference sequences and BLAST parameters. You can edit the text boxes, for more details on parameters, please refer to the [manual](PyNCBIminer_1.2.5_manual.pdf).
 
 **entrez email**: Users can restrict the search to sequences published within a specific timeframe (default: 1900-now). We recommend users to provide their email address, failure to do so may result in access being blocked by NCBI.
 
-![image](graph/set_target_region.png)
+
 
 #### Step 2: Submit BLAST
 
