@@ -28,7 +28,7 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 **Taxa**: Saxifragales, **Gene**: ITS
 
-![image](graph/quick_start.png)
+![image](graph/quickstart.png)
 
 ### 2.1.2 The detailed steps
 
