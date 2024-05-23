@@ -56,7 +56,7 @@ Click the `submit New BLAST` button in the 'Working directory' section to initia
 
 If you wish to resume an incomplete task, enter the working directory and click the `load Previous Job` button for loading. The program will automatically assess the progress and resume execution from the point of interruption.
 
-![image](graph/load.png)
+![image](graph/load_previous_job.png)
 
 ### 2.1.3 View results
 
