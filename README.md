@@ -44,7 +44,7 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 **entrez email**: Users can restrict the search to sequences published within a specific timeframe (default: 1900-now). We recommend users to provide their email address, failure to do so may result in access being blocked by NCBI.
 
-
+![image](graph/entrez_search.png)
 
 #### Step 2: Submit BLAST
 
