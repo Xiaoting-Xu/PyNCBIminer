@@ -50,7 +50,7 @@ The Sequence Retrieving Module is instrumental in accomplishing the primary func
 
 Click the `submit New BLAST` button in the 'Working directory' section to initiate the BLAST process. The process continues until no new sequences can be found, at which point the BLAST stops, and sequence downloading begins.
 
-![image](graph/submit.png)
+![image](graph/submit_new_blast.png)
 
 #### Step 3: Load previous job
 
