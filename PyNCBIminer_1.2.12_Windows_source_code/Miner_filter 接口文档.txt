@@ -1,0 +1,248 @@
+若本功能出现问题，请在微信群中提交bug，或/并联系易洋（QQ：2241820739，wechat：BluEye4151，或通过课题组相关群组直接添加）。最好一并提供遇到问题的数据、遇到的bug、python版本等尽可能详尽的信息。
+
+--- 最大化文本阅读器之后可能看起来清晰一些 ---
+--- 最大化文本阅读器之后可能看起来清晰一些 ---
+--- 最大化文本阅读器之后可能看起来清晰一些 ---
+--- 推荐阅读格式 字体：Consolas 样式：Regular 字号：11 供参考
+
+
+=================
+一些建议
+
+建议通过 anaconda / miniconda 进行环境管理，并为代码版本pyNCBIminer的运行单独创建一个新环境
+可以参考 https://blog.csdn.net/miracleoa/article/details/106115730、
+
+为conda换源（有利于 conda install 安装命令加速）：https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/
+为pip换源（有利于 pip install 安装命令加速）：https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
+
+若遇到 ModuleNotFoundError: No module named 'mudule_name', 建议在命令行/控制台中尝试 conda install module_name 或 pip install module_name， 其中 module_name 是报错信息中缺失包的名称
+若仍不能成功安装和导入，建议访问 anaconda.org，搜索对应包的名称，并根据搜索结果调整安装命令再次尝试
+若仍不能成功安装和导入，建议google，也可以找我
+
+
+=================
+MAFFT 安装
+！！！请注意，该安装方法仅针对个人电脑，请勿在共享平台（如服务器）上随意修改环境变量！！！
+
+brief introduction：MAFFT is a multiple sequence alignment program for unix-like operating systems 
+软件简介：MAFFT是一款跨平台的多序列比对软件，pyNCBIminer中有多处对MAFFT的调用。其中，瑞静师姐提供的可执行版本中以整合MAFFT，无需额外操作；本文档所对应的代码版本未整合MAFFT，需用户自行安装。
+
+website：https://mafft.cbrc.jp/alignment/software/
+1.访问网站：访问上述网站（无需科学），在左列 Download Version 选择对应操作系统的版本；
+2.下载安装包：以Windows为例，其他操作系统请遵从网站上提供的相应指引。Windows用户请选中"all in one version"，并点击下载；
+3.软件安装：将压缩包复制/移动到用户指定文件夹，请注意完整的文件路径中最好仅含英文字符（ascii字符）且不含空格，解压文件，进入解压后 mafft-win 文件夹，复制此时的绝对路径；
+4.环境变量：
+	（1）在Windows搜索框中输入“编辑系统环境变量”
+	（2）在上方菜单（计算机名、硬件、高级、系统保护、远程）中选择“高级”
+	（3）单击右下角“环境变量”按钮
+	（4）在“系统变量中”单击“Path”，并点击“编辑”按钮，此时将弹出“编辑环境变量”窗口
+	（5）将 mafft-win 文件夹的绝对路径输入新建的行中，示例：C:\Users\Yy\Downloads\mafft_2024_3_7\mafft-win
+	（6）依次单击确定按钮关闭窗口（合计3个）
+	（7）按住 windows+R 并输入 cmd （或搜索cmd）运行命令提示符窗口，输入 mafft --help 并回车，若不报错（not recognized / no such file / ...）并显示简要的帮助信息，则安装成功，可以继续使用 Miner_filter.py
+
+
+
+=================
+更新日志
+2023.12.13：修改了reduce_dataset中“步骤简要说明”部分的描述，增加了与consensus sequence相关计算和评价标准。
+2023.12.25：debug; 增加了combine_species函数的功能和说明。
+2024.1.5：debug（现在对物种名的识别及操作以表格信息而非fasta definition line为唯一参照）; 增加了对reduce_dataset输出文件的简要说明。
+2024.1.7: 
+	1.debug. 修复了在tmp_files文件夹下找不到blast_result_kept文件的问题（感谢王宇轩同学帮我发现了这个bug）；
+	2.在合并物种名时，额外考虑了ssp字段。当subsp=True, 物种名称中包含subsp和ssp的物种都将被合并入对应种进行序列筛选；
+	3.新增了remove_duplicate，去除序列集之中序列本身完全一致的多余records（仅保留一条，优先保留具备voucher信息的），默认整合至reduce_dataset中（见“ reduce_dataset 步骤简要说明”）;
+	4.在reduct_dataset中新增参数 max_num, 允许用户设置筛选序列时的最大候选序列数目（原代码为“每个物种仅分析5条最长的序列，现可指定数目n，分析[n]条最长的序列，在其中择优保留），并补充了该函数的参数说明。
+2024.1.14:
+	1.调整了 remove_duplicate，现为去除序列集之中序列本身和voucher信息均完全一致的多余records（仅保留一条），默认整合至reduce_dataset中（见“ reduce_dataset 步骤简要说明”）；
+	2.新增了默认筛选条件（voucher_info_required=1, publish_required=2, newest=3），暂时不可更改，并整合至reduce_dataset中（见“ reduce_dataset 步骤简要说明”）；
+	3.新增了自动备份功能。当输出文件夹中存在由Miner_filter导出的结果文件时（暂时不包含extension_control），将备份至输出路径下backup文件夹；
+	4.在任务开始前，若工作路径中存在由reduce_dataset导出的旧文件，则删除这些旧文件（results中结果文件有备份，过程文件则直接删除），以避免潜在的问题；
+	5.依赖文件debug。
+2024.1.24：
+	1.在筛选序列的过程当中，删除某类群内仅单一物种出现的大规模插入片段（见“ reduce_dataset 步骤简要说明”）；
+	2.新增了根据TNRS进行物种名校正的功能，该功能作者为王宇轩（见“ reduce_dataset 步骤简要说明”）；
+	3.删除了原有的“每个物种仅考虑长度前十序列”的标准，转而对所有序列进行考虑，避免错失长度排位不靠前但高质量的序列。
+2024.1.25：
+	1.更新了 reduce_dataset 中关于“删除大片段插入”功能相关的代码，允许参数设置（max_insertion_length，max_insertion_num），并相应更改了参数说明和步骤描述；
+	2.修复了“删除大片段插入”功能中的“差一错误” （off-by-one），现在可以正确地检测并删除大片段的插入序列。
+2024.2.2：
+	将 reduce_dataset 中通过TNRS校正的功能设置为“默认不执行”，后续对物种名校正的功能将从本模块（Miner_filter）中分离，所有更新将不体现在本模块中。
+2024.2.4:
+	修改了一些情况下 blast_results_chekced_seq_info.txt (或经过tnr修正后的同名表格)中 "specimen_voucher" 列存在空缺值时导致的程序终止。
+2024.2.18：
+	修复了一些情况下 consensus value 不能正确计算的错误。
+2024.2.19：
+	修复了特定情况下不能编码引起的“序列不完整”问题。
+	问题描述：TNRS数据库中存储的信息存在不能用gbk编码的情况，当前遇到将Acacia fleckii的Synonym定义为Senegalia ﬂeckii的情况（注意 ﬂ 仅一个单元，非gbk可编码字符）。该情况下序列的注释无法编码而导致程序意外中断。
+	解决方案：跳过全部此类不可编码序列，保证能够完成其他可编码序列的筛选工作，并在输出根目录下产生 name_error.txt 文件，描述因编码问题而跳过的序列，请用户自行查看并修改这些序列，参考 tmp_files/blast_result_kept.txt
+2024.3.7：
+	我创建了一个新的 Python + Biopython 环境，版本与原开发环境存在差异。发现不同版本中允许的字符串处理方式有所差异。因此，本次更新修复了特定版本 Bio.Seq 与 str 交互的问题，现在在更多版本中可以正常处理、删减、替换序列；
+	修复了删除异常序列后，因信息变动导致的查询错误问题（感谢杨旭家同学帮我发现了这个bug，这是我的测试数据集中没找出来的问题，也说明在使用本功能筛选后是需要再对序列进行检查的）；
+	更新了"一些建议"板块，建议看看建议；
+	更新了"mafft安装"板块，初次使用的用户需检查mafft是否已正确安装、mafft路径是否在环境变量中。
+2024.3.8
+	解决了特定情况下，寻找共性序列时无法产生多序列比对结果的问题，推测这个问题可能是由于文件名中出现了特殊符号（如单引号）导致的，当前版本中会强制删除序列文件名中的单引号。
+2024.3.13
+	为reduce_dataset新增了参数consensus_value,可通过设置该参数为False来取消consensus_value作为筛选标准（之一），仅考虑其他因素（见reduce_dataset参数说明）
+2024.3.20
+	修复了在控制序列延伸时可能出现的索引错误和方向错误问题（感谢石雨鑫同学帮我发现这个bug
+2024.5.3
+	1.替换了extension_control中的比对算法，现在是（1）根据genus划分序列；（2）通过alofi（alofi的说明见control_extension部分）进行比对；（3）根据比对结果判断是否删除延伸部分，见 control_extension 说明
+	2.更换了筛选序列中部分条件的先后顺序，见 reduce_dataset 步骤说明
+
+
+
+一般来说调用 control_extension 和 reduce_dataset 即可，没有测试单独调用 remove_exceptional_records 、 combine_species 等函数的情况。
+
+
+
+==================
+CLass Miner_filter - filter retrieved seqs, including three main functions:
+        1. <func> remove_exceptional_records: remove specific records (sp., cf., aff., x, and short ones)
+        2. <func> reduce_dataset: select best marker for each taxon.
+        3. <func> control_extension: control the extension of all seqs, trim if necessary.
+	将类实例化时，建议in_path与out_path均为BLAST结果的根目录
+
+
+------------------
+<func> remove_exceptional_records(in_path=None, out_path=None, sp=True, cf=True, aff=True, x=True, length_threshold=0, ignore_gap=True)：
+	既集成在<func> reduce_dataset中，也允许单独调用。
+	- 单独调用即用户仅需删除带有特定名称或小于指定长度的序列时。需要单独指定输入输出，输入即为单个待处理的fasta序列文件，输出为某目的文件夹。【尚未对单独调用进行充分测试】
+	- 集成调用时，仅需调用<func> reduce_dataset即可，其输出在 results/blast_results_exception_removed.fasta
+
+	参数说明：
+	sp=True 代表移除序列名称含有 “ sp. ” 的序列，cf=True, aff=True, x=True 以此类推，False即不移除。
+	length_threshold 移除长度小于该值的序列，默认0即不移除。
+	ignore_gap：如果为真，在计算长度时将忽略所有gap"-"，如序列"AATTCC--GG"忽略gap后长度为8，不忽略则为10.在根据长度长度筛选序列时可能需要调整该参数。
+
+	调用示例：
+	my_filter = Miner_filter("单独调用时，类的输入文件夹无所谓，可以初始化为空，但输出要求与实际输出文件夹一致", "开发数据/Magnoliaceae/rbcL")
+    	my_filter.remove_exceptional_records("开发数据/Magnoliaceae/rbcL/results/blast_results_checked.fasta", "开发数据/Magnoliaceae/rbcL")
+
+
+
+------------------
+<func> combine_species(in_path=None, out_path=None, subsp=True, var=True, f=True)
+	既集成在<func> reduce_dataset中，也允许单独调用。
+	- 单独调用即用户仅需将亚种、变种或变型重命名时。需要单独指定输入输出，输入即为单个待处理的fasta序列文件，输出为某目的文件夹。【尚未对单独调用进行充分测试】
+	- 集成调用时，仅需调用<func> reduce_dataset，其输出在 results/blast_results_species_combined.fasta
+
+	参数说明：
+	subsp=True 代表将序列名称含有 “ subsp. ” 的序列重命名为其种名，不含subsp，如 Magnolia_figo_var._figo → Magnolia_figo，在后续步骤中“亚种”与“种”一视同仁，var=True（变种），f=True（变型）以此类推。
+	
+
+
+------------------
+<func> reduce_dataset(name_correction=False, 
+		      consensus_value=True,
+                      subsp=True, var=True, f=True, 
+                      sp=True, cf=True, aff=True, x=True, length_threshold=0, ignore_gap=True,
+                      max_insertion_length=20, max_isertion_num=1)
+	-------
+	参数说明：
+	name_correction=False 如果True，通过TNRS对物种名进行校正，要求额外依赖环境（将文件夹 TNRS_dep 与 Miner_filter.py 脚本至于同一目录，代码版本要求安装 rpy2，本文档末附一个简单教程）；默认为False（不执行）。
+		该校正的功能设置为“默认不执行”，后续对物种名校正的功能将从该模块中分离，所有更新将不体现在该模块中。不推荐使用，建议按照默认设置False运行。
+
+	consensus_value=True 如设置为False，则从序列筛选标准中移除“consensus value”部分，即跳过步骤说明中的“第7、8步”。
+
+	subsp=True 代表将序列名称含有 “ subsp. ” 的序列重命名为其种名，不含subsp，如 Magnolia_figo_var._figo → Magnolia_figo，在后续步骤中“亚种”与“种”一视同仁，var=True（变种），f=True（变型）以此类推；False则不执行。
+	var=True 将序列名称含有 “ var. ” 的序列重命名为其种名，False则不执行。
+	f=True 将序列名称含有 “ f. ” 的序列重命名为其种名，False则不执行
+
+	sp=True 代表移除序列名称含有 “ sp. ” 的序列，cf=True, aff=True, x=True 以此类推，False则不移除。
+	cf=True 代表移除序列名称含有 “ cf. ” 的序列，False则不移除。
+	aff=True 代表移除序列名称含有 “ aff. ” 的序列，False则不移除。
+	x=True 代表移除序列名称含有 “ x ” 的序列，False则不移除。
+	
+	length_threshold: 移除长度小于该值的序列，默认0即不移除。
+	ignore_gap：如果为True，在计算长度时将忽略所有gap"-"，如序列"AATTCC--GG"忽略gap后长度为8，不忽略则为10。在根据长度长度筛选序列时可能需要调整该参数。
+	
+	max_insertion_length: 当某物种MSA中存在不超过[max_insertion_num]个长度大于[max_insertion_length]插入片段时，将删除这些片段。默认长度为20bp.
+	max_insertion_num: 当某物种MSA中存在不超过[max_insertion_num]个长度大于[max_insertion_length]插入片段时，将删除这些片段。默认数目为1物种（1片段）。
+
+	当 (consensus_value=False 且 max_insertion_length<=0) 或 (consensus_value=False 且 max_insertion_num<=0) 时，将不进行序列比对的部分，筛选速度将大幅度提升。
+	
+	=======
+	步骤说明：
+	1. 根据TNRS提供的信息对物种名进行校正。若（成功）执行该步骤，则 blast_results_checked_seq_info_ori.txt 为校正前文件，blast_results_checked_seq_info.txt 为校正后文件；
+	2. 根据用户指定的参数，移除完整数据集中部分指定序列（如名称带sp.的序列等）；
+	3. 根据用户指定的参数，对物种进行合并（如将亚种与对应种合并）；
+	4. 对数据集进行去重（对于每种序列信息和voucher信息完全一致的所有序列，仅保留其中一条）；
+	5. 对每个物种进行序列比对；
+	6. 检查比对结果，若某比对结果中存在单一大片段插入，则删除插入片段再次进行比对，作为该物种的序列比对结果；（单一大片段插入：比对结果中有一个物种存在较大插入片段，其余物种在这些位点都是gap，对应两个可改参数）；
+	7. 计算每个物种的 consensus sequence ；
+	8. 若存在consensus value最高的唯一序列，则保留作为该物种的最优序列（代表序列），输出在 results/blast_results_filtered.fasta，否则进入下一步
+	9. 依次根据“是否具备voucher信息”、“是否具备publication信息”、“是否为最新上传序列”这三个条件保留序列，若存在唯一最优序列，则保留，否则进入下一步
+	10. 对每个物种的序列，分别计算其“长度”（ATCG的数量），sum_hits_score，source，consensus value的秩（排序位次）
+	11. 对每个物种的序列，计算秩和，并对秩和进行排序
+	12. 每个物种保留秩和最小的一条序列，作为该物种的最优序列（代表序列），输出在 results/blast_results_filtered.fasta
+
+	=======
+	调用示例：
+	my_filter = Miner_filter("C:/Users/Yy/学习资料/Project/pyNCBIminer/开发数据/Magnoliaceae/rbcL", "C:/Users/Yy/学习资料/Project/pyNCBIminer/开发数据/Magnoliaceae/rbcL")
+    	my_filter.reduce_dataset(length_threshold=100) # 所有其他值均采用默认值，见函数声明。
+
+	=======
+	输出说明：
+	./results/
+		history_backup/：若运行 reduce_dataset 时工作路径下已存在筛选的数据，则将这些数据备份入 history_backup 文件夹中，再执行新的筛选任务。
+		blast_results_non_duplicate.fasta：移除冗余序列（sequence与voucher均一致的序列，每组这样的冗余序列仅保留一条）后的文件。
+		blast_results_exception_removed.fasta: 根据参数设定，选择性移除了物种名（organism）中包含f., cf., aff., x 的物种后的fasta格式序列文件。
+		blast_results_checked_seq_info_modified.txt: 根据参数设定，选择性合并了物种名（organism）中包含sp., subsp., var. 的物种后对应的txt（tsv）格式文件，仅对organism列进行了删改。
+		blast_results_filtered.fasta: 【***一般是最终输出文件之一***】 为每个物种保留一条最具代表性的最优序列后的fasta格式序列文件。【***一般是最终输出文件之一***】
+		blast_result_kept.txt: 【***一般是最终输出文件之一***】 为每个物种保留一条最具代表性的最优序列后，存储序列信息的txt（tsv）格式序列文件。【***一般是最终输出文件之一***】
+	./tmp_files/
+		consensus_calculation/: 用于计算一致性序列的中间文件，包含每个物种数目不小于5的类群中序列的fasta格式文件及其MSA。
+		blast_result_kept.txt: 为每个物种保留一条最具代表性的最优序列后，存储序列信息的txt（tsv）格式序列文件,同results文件夹下的同名文件。
+		blast_result_long.fasta:包含每个物种最长10条（或更少）序列的fasta格式文件。
+		blast_result_long.txt: 包含每个物种最长10条（或更少）序列信息的txt（tsv）格式文件。
+
+
+
+------------------
+<func> control_extension(length_ratio=0.6, max_subset_size=200, gappyness_threshold=0.5)
+	步骤简要说明：
+	1. 提取results/blast_results_checked_seq_info.txt的信息，把所有序列按照属划分，同属的存入一个fasta，不同属存入不同fasta
+	2. 对于划分后的数据集（每个数据集中包含一个属的全部序列），如果：
+		（1）该数据集中序列数目 > 5：通过 alofi** 方法对数据集进行比对；
+		（2）该数据集中序列数目 <= 5：选同一个科的最大属，通过“mafft --add”方法以同科最大属的MSA比对为参考，进行序列比对
+	3. 检查每条序列延伸部分的gap占比，若某延伸区域gap超过50%（修改gappyness_threshold以指定），则删除该延伸部分，输出为blast_results_controlled.fasta
+
+
+		** alofi ** 简述：
+		1. 通过对序列长度进行聚类，选出平均长度最长的类，称为“长序列群”；
+		2. 对长序列群进行比对，根据identity聚类，选出与consensus sequence最相似的类，称为“长一致群”；
+		3. 对长一致群进行严格比对；
+		4. 将剩余的中长序列、短序列分别通过mafft --add， mafft --addfragments方法加入比对，得到最终比对结果
+		总之，这是对多序列比对的一个调整，不关心其细节时，该方法就是一种多序列比对算法。
+
+
+	参数说明：
+	length_ratio： 划分长短序列时，区分长短序列的阈值，规定长于 [“数据集中最长序列的长度”*length_ratio] 的为长序列，其余为短序列
+	max_subset_size： 控制子文件大小时，每个子文件中最大序列数。主要是控制MSA的质量和耗时
+	gappyness_threshold： 若延伸区的gap占比大于该值，则视为较低质量的延伸，并移除这些质量较低的延伸
+
+
+	调用示例
+	my_filter = Miner_filter("simple_test/test_retrieving/ITS", "simple_test/test_retrieving/ITS")
+    	my_filter.control_extension()
+
+
+
+======================
+在Anaconda中安装rpy2：
+1. 安装r语言的基本环境。命令： conda install r
+2. 安装rpy2包。命令：pip install rpy2
+即可正常使用。rpy2是一个Python包文件，用于R语言和Python语言的混合编程，我在安装的时候发现同一环境中没有R的话安不了rpy2，但没进一步了解具体原因，推测可能R是rpy2的必要依赖。
+
+
+
+
+
+
+
+
+
+
+
+
