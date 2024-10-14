@@ -1,6 +1,6 @@
 9 Steps to Run PyNCBIminer
 
-## download the newest version (1.2.8 on 26-Apr-2024) of MacOS source code on https://github.com/Xiaoting-Xu/PyNCBIminer and extract to your [path]
+## download the newest version (1.2.12 on 14-Oct-2024) of MacOS source code on https://github.com/Xiaoting-Xu/PyNCBIminer and extract to your [path]
 
 ## the commands followed are run in "anaconda prompt" or "miniconda prompt". If not yet installed, we recommend installation of Anaconda Navigator, and open anaconda prompt in Navigator
 
