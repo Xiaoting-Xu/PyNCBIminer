@@ -10,6 +10,7 @@ from miner_filter import Miner_filter
 from datetime import datetime
 import shutil
 import pandas as pd
+from Bio import SeqIO
 
 
 def rename_results(wd):
@@ -50,6 +51,29 @@ def combine_keep_records(wd_list):
     combined_records = combined_records.fillna("-")
     combined_records.to_csv(Path(wd).parent / Path("combined_records.txt"), index=False, sep="\t")
     print("Combined records save in %s" % Path(wd).parent)
+
+
+def put_filtered_seq_together(wd_list):
+    print("Copying filtered sequences into one directory...")
+
+    for wd in wd_list:
+        if not os.path.exists(Path(wd).parent / Path("filtered_seqs")):
+            os.mkdir(Path(wd).parent / Path("filtered_seqs"))
+
+        name = Path(wd).name
+        try:
+            with open(Path(wd).parent / Path("filtered_seqs")/Path(name+".fasta"), "w") as fw:
+                for record in SeqIO.parse(Path(wd) / Path("results") / Path("blast_results_filtered.fasta"), "fasta"):
+                    fw.write(">"+record.description.split("|")[1])
+                    fw.write("\n")
+                    fw.write(str(record.seq))
+                    fw.write("\n")
+
+
+        except FileNotFoundError:
+            print("%s has not been copied." % name)
+
+    print("All filtered sequences are into ‘filtered_seqs’ folder")
 
 
 def call_miner_filter(in_path, out_path, action, consensus_value, len_shresh, name_correction=False):
@@ -123,3 +147,4 @@ def call_miner_filter(in_path, out_path, action, consensus_value, len_shresh, na
             t2 = datetime.now()
             print("Running time: %s seconds" % (t2 - t1))
         combine_keep_records(wd_list)
+        put_filtered_seq_together(wd_list)
