@@ -10,6 +10,7 @@ from miner_filter import Miner_filter
 from datetime import datetime
 import shutil
 import pandas as pd
+from Bio import SeqIO
 
 
 def rename_results(wd):
@@ -52,7 +53,30 @@ def combine_keep_records(wd_list):
     print("Combined records save in %s" % Path(wd).parent)
 
 
-def call_miner_filter(in_path, out_path, action, len_shresh, name_correction=False):
+def put_filtered_seq_together(wd_list):
+    print("Copying filtered sequences into one directory...")
+
+    for wd in wd_list:
+        if not os.path.exists(Path(wd).parent / Path("filtered_seqs")):
+            os.mkdir(Path(wd).parent / Path("filtered_seqs"))
+
+        name = Path(wd).name
+        try:
+            with open(Path(wd).parent / Path("filtered_seqs")/Path(name+".fasta"), "w") as fw:
+                for record in SeqIO.parse(Path(wd) / Path("results") / Path("blast_results_filtered.fasta"), "fasta"):
+                    fw.write(">"+record.description.split("|")[1])
+                    fw.write("\n")
+                    fw.write(str(record.seq))
+                    fw.write("\n")
+
+
+        except FileNotFoundError:
+            print("%s has not been copied." % name)
+
+    print("All filtered sequences are into ‘filtered_seqs’ folder")
+
+
+def call_miner_filter(in_path, out_path, action, consensus_value, len_shresh, name_correction=False):
     """
     Call miner_filter, and modify input and output file names, using one thread.
     :param in_path: working directory of one marker or the parent directory of multiple working directories
@@ -94,7 +118,9 @@ def call_miner_filter(in_path, out_path, action, len_shresh, name_correction=Fal
             my_miner_filter = Miner_filter(wd, wd)
             my_miner_filter.reduce_dataset(name_correction=name_correction,  # for name correction using trns (rtrns)
                                            subsp=True, var=True, f=True,  # for species combination
-                                           sp=True, cf=True, aff=True, x=True, length_threshold=len_shresh, ignore_gap=True,
+                                           sp=True, cf=True, aff=True, x=True,
+                                           consensus_value=consensus_value, length_threshold=len_shresh,
+                                           ignore_gap=True,
                                            # for exception removal
                                            )
             t1 = datetime.now()
@@ -121,3 +147,4 @@ def call_miner_filter(in_path, out_path, action, len_shresh, name_correction=Fal
             t2 = datetime.now()
             print("Running time: %s seconds" % (t2 - t1))
         combine_keep_records(wd_list)
+        put_filtered_seq_together(wd_list)
