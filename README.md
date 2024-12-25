@@ -133,7 +133,7 @@ PyNCBIminer can perform alignment concatenation to concatenate alignments of mul
 
 # 3. User manual
 
-A more complete manual is [here](PyNCBIminer_1.2.5_manual.pdf).
+A more complete manual is [here](PyNCBIminer_1.2.5_manual.pdf), example data can be downloaded from [here](https://datadryad.org/stash/dataset/doi:10.5061/dryad.xpnvx0kq3).
 
 # 4. Contact
 
